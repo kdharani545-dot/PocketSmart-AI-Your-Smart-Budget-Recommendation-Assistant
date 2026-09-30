@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PocketSmart AI - Budget Assistant</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>PocketSmart AI</h1>
+      <p>Your Smart Budget & Recommendation Assistant</p>
+    </header>
+
+    <section id="dashboard">
+      <div class="summary-cards">
+        <div class="card income-card">
+          <h3>Total Income</h3>
+          <p id="total-income">₹0</p>
+        </div>
+        <div class="card expense-card">
+          <h3>Total Expenses</h3>
+          <p id="total-expenses">₹0</p>
+        </div>
+        <div class="card balance-card">
+          <h3>Remaining Balance</h3>
+          <p id="remaining-balance">₹0</p>
+        </div>
+      </div>
+
+      <div class="add-entries">
+        <div class="entry-form">
+          <h3>Add Income</h3>
+          <form id="income-form">
+            <input type="number" id="income-amount" placeholder="Amount" min="1" required />
+            <input type="text" id="income-description" placeholder="Description" />
+            <input type="date" id="income-date" />
+            <button type="submit">Add Income</button>
+          </form>
+        </div>
+
+        <div class="entry-form">
+          <h3>Add Expense</h3>
+          <form id="expense-form">
+            <input type="number" id="expense-amount" placeholder="Amount" min="1" required />
+            <input type="text" id="expense-description" placeholder="Description" />
+            <select id="expense-category" required></select>
+            <input type="date" id="expense-date" />
+            <button type="submit">Add Expense</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="charts">
+        <h3>Monthly Budget Tracking</h3>
+        <canvas id="budgetChart"></canvas>
+      </div>
+
+      <div class="suggestions">
+        <h3>Savings Suggestions</h3>
+        <p id="suggestion-text">Loading suggestions...</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="assets/chart.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
